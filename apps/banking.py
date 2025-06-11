@@ -17,20 +17,50 @@
 # 4번 입력시 : 프로그램을 종료한다.
 
 # 잔액확인 함수
-def show_balance():
-    print("show_balance")
+def show_balance(balance):
+    print(f"현재 잔액은 {balance}원 입니다.")
 
 # 입금 함수
 def deposit():
-    print("deposit")
+    while True:
+        amount = input("입금할 금액을 입력해주세요")
+
+        try:
+            amount = int(amount)
+        except ValueError:
+            print("숫자를 입력해주세요")
+            continue
+
+        if amount <= 0 :
+            print("0보다 큰 수를 입력해 주세요")
+            return 0
+        else:
+            return amount
+        
+    
 
 # 출금 함수
-def withdraw():
-    print("withdraw")
+def withdraw(balance):
+    while True:
+        amount = input("출금할 금액을 입력해주세요")
+
+        try:
+            amount = int(amount)
+        except ValueError:
+            print("숫자를 입력해주세요")
+            continue
+
+        if amount > balance :
+            print("잔액이 부족합니다")
+            return 0
+        else:
+            return amount
+    
+
 
 def main():
     is_run = True
-
+    balance = 0
     while is_run:
         print("1. 잔액보기")
         print("2. 입금하기")
@@ -40,11 +70,11 @@ def main():
         choice = input("원하는 작업을 1 ~ 4 중에 선택해 주세요")
 
         if choice == "1":
-            show_balance()
+            show_balance(balance)
         elif choice == "2":
-            deposit()
+            balance += deposit()
         elif choice == "3":            
-            withdraw()
+            balance -= withdraw(balance)
         elif choice == "4":
             is_run = False
             print("프로그램을 종료합니다")
