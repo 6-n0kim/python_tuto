@@ -65,5 +65,3 @@ def main():
 # 프로그램 시작
 if __name__ == "__main__":
     main()
-
-# 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
