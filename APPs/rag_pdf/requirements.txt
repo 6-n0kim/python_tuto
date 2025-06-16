@@ -1,0 +1,12 @@
+langchain-huggingface
+langchain-core
+langchain
+langchain-community
+faiss-cpu
+python-dotenv
+transformers
+sentence-transformers
+unstructured
+pdf2image
+pdfminer.six
+pi-heif

@@ -1,0 +1,17 @@
+- 패키지 설치
+pip install -r requirements.txt
+
+- 콘다 환경 설치
+conda create --prefix ./venv python=3.12
+
+- 콘다 가상환경 실행
+conda activate ./venv
+
+- 콘다 가상환결 종료
+conda deactivate
+
+
+pip install Unstructured[PDF]
+
+
+fastAPI react
